@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<div class="book-detail">
+    <div class="detail-container">
+        {% if book.image_url %}
+        <div class="detail-image">
+            <img src="{{ book.image_url }}" alt="{{ book.title }}">
+        </div>
+        {% endif %}
+        
+        <div class="detail-info">
+            <h1>{{ book.title }}</h1>
+            <p class="detail-author">✍️ Автор: {{ book.author }}</p>
+            <p class="detail-year">📅 Год: {{ book.year }}</p>
+            <div class="detail-description">
+                <h3>Описание:</h3>
+                <p>{{ book.description }}</p>
+            </div>
+            
+            <div class="detail-actions">
+                <a href="/" class="btn-back">← На главную</a>
+                <a href="/admin" class="btn-admin">🔧 Админка</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
